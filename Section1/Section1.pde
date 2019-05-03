@@ -60,7 +60,10 @@ class Visualizer {
     //???WRITE THIS METHOD!!!
     for (int i = 0; i < ARRSIZE; i++) {
       values[i] += speeds[i];
-      if (values[i] > MAX_VALUE || values[i] < MIN_VALUE) values[i]/=10;
+      if (values[i] > MAX_VALUE || values[i] < MIN_VALUE) {
+        //values[i]/=10;
+        speeds[i] *= -1;
+      }
       //??? keep them values between max/min value
 
       //??? reverse the speeds so they oscillate up/down when they reach max/min

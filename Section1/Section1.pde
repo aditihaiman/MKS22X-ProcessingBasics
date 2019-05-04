@@ -1,7 +1,9 @@
-int MAX_VALUE = 100;
-int MIN_VALUE = -100;
-int WIDTH = 400;
-int ARRSIZE = 20;
+float HEIGHT = 400;
+float MAX_VALUE = HEIGHT/2;
+float MIN_VALUE = HEIGHT/2 * -1;
+float WIDTH = 557;
+int ARRSIZE = 200;
+
 Visualizer v;
 
 /*You are simulating a visualizer of multiple values
@@ -28,12 +30,12 @@ class Visualizer {
     //You can assume 10, but it would be even better 
     //if you could modify it to be larger increments.
     fill(255);
-    rect(x, y, WIDTH, 200);
+    rect(x, y, WIDTH, HEIGHT);
     //This is a 200x400 box.
     //The width of the visualizer is 400! This rect is the border
 
     //the line is the 0 y-value, the top is 100, the bottom is -100
-    line(x, y+100, x+WIDTH, y+100);
+    line(x, y+HEIGHT/2, x+WIDTH, y+HEIGHT/2);
 
     //You need to use a loop. You need to make the HEIGHT of the bars 
     //the values in the array.
@@ -45,7 +47,7 @@ class Visualizer {
       else if(values[i] > 0) fill(255, 255, 0);
       else if(values[i] > -50) fill(255,140,0);
       else fill(255, 0, 0);
-      rect(x+(WIDTH/ARRSIZE*i), y+100-values[i], WIDTH/ARRSIZE, values[i]);
+      rect(x+(WIDTH/ARRSIZE*i), y+HEIGHT/2-values[i], WIDTH/ARRSIZE, values[i]);
       
     }
 
